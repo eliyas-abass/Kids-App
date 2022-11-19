@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:kids_app/components/home_screen_card.dart';
 import 'package:kids_app/screens/menu_screen.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -10,12 +11,12 @@ class HomeScreen extends StatelessWidget {
       body: SafeArea(
           child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
-        crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
           const Text(
             "Home Screen",
             textAlign: TextAlign.center,
           ),
+          const HomeScreenCard(),
           MaterialButton(
               child: const Text("Go to Menu"),
               onPressed: () {
