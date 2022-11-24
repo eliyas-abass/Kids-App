@@ -8,6 +8,7 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+  
       body: SafeArea(
           child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
@@ -16,7 +17,35 @@ class HomeScreen extends StatelessWidget {
             "Home Screen",
             textAlign: TextAlign.center,
           ),
-          const HomeScreenCard(),
+          Container(
+            child: Column(
+              children: [
+                Row(
+                  children: [
+                     InkWell(child:  HomeScreenCard()),
+                     createnewSizedBox (),
+                     InkWell(child: HomeScreenCard()),
+                  ],
+                ),
+               createSizedBox(),
+                Row(
+                  children: [
+                     InkWell(child: HomeScreenCard()),
+                     createnewSizedBox (),
+                     InkWell(child: HomeScreenCard()),
+                  ],
+                ),
+                createSizedBox(),
+                Row(
+                  children: [
+                     InkWell(child: HomeScreenCard()),
+                     createnewSizedBox (),
+                     InkWell(child: HomeScreenCard()),
+                  ],
+                ),
+              ],
+            ),
+          ),
           MaterialButton(
               child: const Text("Go to Menu"),
               onPressed: () {
@@ -28,6 +57,18 @@ class HomeScreen extends StatelessWidget {
               }),
         ],
       )),
+  
     );
   }
+    SizedBox createSizedBox () {
+        return const SizedBox(
+           height: 40,
+        );
+       }
+
+       SizedBox createnewSizedBox () {
+        return const SizedBox(
+           width: 100,
+        );
+       }
 }
