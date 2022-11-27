@@ -8,7 +8,6 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-  
       body: SafeArea(
           child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
@@ -22,25 +21,85 @@ class HomeScreen extends StatelessWidget {
               children: [
                 Row(
                   children: [
-                     InkWell(child:  HomeScreenCard()),
-                     createnewSizedBox (),
-                     InkWell(child: HomeScreenCard()),
-                  ],
-                ),
-               createSizedBox(),
-                Row(
-                  children: [
-                     InkWell(child: HomeScreenCard()),
-                     createnewSizedBox (),
-                     InkWell(child: HomeScreenCard()),
+                    InkWell(
+                      child: HomeScreenCard(
+                        backgroundImage: "assets/images/bg_alphabets.png",
+                        backgroundColor: Colors.red,
+                      ),
+                      onTap: () => {
+                        Navigator.of(context).push(
+                          MaterialPageRoute(
+                            builder: (context) => const MenuScreen(),
+                          ),
+                        )
+                      },
+                    ),
+                    createnewSizedBox(),
+                    InkWell(
+                        child: HomeScreenCard(
+                      backgroundImage: "assets/images/bg_numbers.png",
+                      backgroundColor: Colors.blue,
+                    ),
+                     onTap: () => {
+                        Navigator.of(context).push(
+                          MaterialPageRoute(
+                            builder: (context) => const MenuScreen(),
+                          ),
+                        )
+                      },),
                   ],
                 ),
                 createSizedBox(),
                 Row(
                   children: [
-                     InkWell(child: HomeScreenCard()),
-                     createnewSizedBox (),
-                     InkWell(child: HomeScreenCard()),
+                    InkWell(
+                        child: HomeScreenCard(
+                      backgroundImage: "assets/images/bg_shapes.png",
+                      backgroundColor: Color.fromARGB(255, 12, 238, 42),
+                    ),
+                    onTap: () => {
+                        Navigator.of(context).push(
+                          MaterialPageRoute(
+                            builder: (context) => const MenuScreen(),
+                          ),
+                        )
+                      },),
+                    createnewSizedBox(),
+                    InkWell(child: HomeScreenCard(backgroundImage: "assets/images/bg_animals.png",
+                      backgroundColor: Colors.orange,),
+                      onTap: () => {
+                        Navigator.of(context).push(
+                          MaterialPageRoute(
+                            builder: (context) => const MenuScreen(),
+                          ),
+                        )
+                      },),
+                  ],
+                ),
+                createSizedBox(),
+                Row(
+                  children: [
+                    InkWell(child: HomeScreenCard(backgroundImage: "assets/images/bg_fruits.png",
+                      backgroundColor: Colors.pink,
+                    ),
+                    onTap: () => {
+                        Navigator.of(context).push(
+                          MaterialPageRoute(
+                            builder: (context) => const MenuScreen(),
+                          ),
+                        )
+                      },),
+                    createnewSizedBox (),
+                    InkWell(child: HomeScreenCard(backgroundImage: "assets/images/bg_vegetables.png",
+                      backgroundColor: Colors.purple,
+                    ),
+                    onTap: () => {
+                        Navigator.of(context).push(
+                          MaterialPageRoute(
+                            builder: (context) => const MenuScreen(),
+                          ),
+                        )
+                      },),
                   ],
                 ),
               ],
@@ -57,18 +116,18 @@ class HomeScreen extends StatelessWidget {
               }),
         ],
       )),
-  
     );
   }
-    SizedBox createSizedBox () {
-        return const SizedBox(
-           height: 40,
-        );
-       }
 
-       SizedBox createnewSizedBox () {
-        return const SizedBox(
-           width: 100,
-        );
-       }
+  SizedBox createSizedBox() {
+    return const SizedBox(
+      height: 40,
+    );
+  }
+
+  SizedBox createnewSizedBox() {
+    return const SizedBox(
+      width: 100,
+    );
+  }
 }
