@@ -36,22 +36,20 @@ class _LettersScreenState extends State<LettersScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      home: Scaffold(
-        body: SafeArea(
-            child: Column(
-          children: [
-            Image.asset(widget.upperCaseImagePath),
-            Image.asset(widget.lowercaseImagePath),
-            Image.asset(widget.imagePath),
-            IconButton(
-                onPressed: () async {
-                  await player.play(DeviceFileSource(widget.soundPath));
-                },
-                icon: const Icon(Icons.play_arrow))
-          ],
-        )),
-      ),
+    return Scaffold(
+      body: SafeArea(
+          child: Column(
+        children: [
+          Image.asset(widget.upperCaseImagePath),
+          Image.asset(widget.lowercaseImagePath),
+          Image.asset(widget.imagePath),
+          IconButton(
+              onPressed: () async {
+                await player.play(DeviceFileSource(widget.soundPath));
+              },
+              icon: const Icon(Icons.play_arrow))
+        ],
+      )),
     );
   }
 }
