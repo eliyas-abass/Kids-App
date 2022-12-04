@@ -18,6 +18,7 @@ class HomeScreenCard extends StatelessWidget {
             image: AssetImage(backgroundImage),
             fit: BoxFit.contain,
           ),
-        ));
+        ),
+        );
   }
 }

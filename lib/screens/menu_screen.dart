@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:kids_app/screens/tracing_screen.dart';
 import 'package:kids_app/screens/alphabets_screen.dart';
 
 class MenuScreen extends StatelessWidget {
@@ -12,24 +13,41 @@ class MenuScreen extends StatelessWidget {
         title: Text(title),
       ),
       body: SafeArea(
-          child: Column(
-        crossAxisAlignment: CrossAxisAlignment.stretch,
-        children: [
-          InkWell(
-            child: const ListTile(
-              title: Text('ListTile with red background'),
-              tileColor: Colors.grey,
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          children: [
+            InkWell(
+              child: const ListTile(
+                title: Text('Learn The Alphabets'),
+                tileColor: Colors.grey,
+              ),
+              
+              onTap: () => {
+                Navigator.of(context).push(
+                  MaterialPageRoute(
+                    builder: (context) => const AlphabetScreen(),
+                  ),
+                )
+              },
             ),
-            onTap: () => {
-              Navigator.of(context).push(
-                MaterialPageRoute(
-                  builder: (context) => const AlphabetScreen(),
-                ),
-              )
-            },
-          )
-        ],
-      )),
+             InkWell(
+              child: const ListTile(
+                title: Text('Tracing'),
+                tileColor: Colors.grey,
+              ),
+              
+              onTap: () => {
+                Navigator.of(context).push(
+                  MaterialPageRoute(
+                    builder: (context) => const TracingScreen(),
+                  ),
+                )
+              },
+            ),
+          ],
+        ),
+      ),
+      
     );
   }
 }

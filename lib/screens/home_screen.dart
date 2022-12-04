@@ -8,125 +8,140 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: SafeArea(
-          child: ListView(
-        children: [
-          Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Expanded(
-                child: InkWell(
-                  child: const HomeScreenCard(
-                    backgroundImage: "assets/images/bg_alphabets.png",
-                    backgroundColor: Colors.red,
-                  ),
-                  onTap: () => {
-                    Navigator.of(context).push(
-                      MaterialPageRoute(
-                        builder: (context) => const MenuScreen(
-                          title: "alphabets",
+      body: Container(
+        decoration: const BoxDecoration(
+          image: DecorationImage(
+            image: AssetImage('assets/images/bg_background.png'),
+            fit: BoxFit.cover,
+          ),
+        ),
+        child: ListView(
+          children: [
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Expanded(
+                  child: InkWell(
+                    child: const HomeScreenCard(
+                      backgroundImage: "assets/images/bg_alphabets.png",
+                      backgroundColor: Color.fromARGB(63, 16, 8, 8),
+                    ),
+                    onTap: () => {
+                      Navigator.of(context).push(
+                        MaterialPageRoute(
+                          builder: (context) => const MenuScreen(
+                            title: "ALPHABETS",
+                          ),
                         ),
-                      ),
-                    )
-                  },
-                ),
-              ),
-              createnewSizedBox(),
-              Expanded(
-                child: InkWell(
-                  child: const HomeScreenCard(
-                    backgroundImage: "assets/images/bg_numbers.png",
-                    backgroundColor: Colors.blue,
+                      )
+                    },
                   ),
-                  onTap: () => {
-                    Navigator.of(context).push(
-                      MaterialPageRoute(
-                        builder: (context) => const MenuScreen(
-                          title: "numbers",
+                ),
+                createnewSizedBox(),
+                Expanded(
+                  child: InkWell(
+                    child: const HomeScreenCard(
+                      backgroundImage: "assets/images/bg_numbers.png",
+                      backgroundColor: Color.fromARGB(63, 16, 8, 8),
+                    ),
+                    onTap: () => {
+                      Navigator.of(context).push(
+                        MaterialPageRoute(
+                          builder: (context) => const MenuScreen(
+                            title: "NUMBERS",
+                          ),
                         ),
-                      ),
-                    )
-                  },
+                      )
+                    },
+                  ),
                 ),
-              ),
-            ],
-          ),
-          createSizedBox(),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              InkWell(
-                child: const HomeScreenCard(
-                  backgroundImage: "assets/images/bg_shapes.png",
-                  backgroundColor: Color.fromARGB(255, 12, 238, 42),
-                ),
-                onTap: () => {
-                  Navigator.of(context).push(
-                    MaterialPageRoute(
-                      builder: (context) => const MenuScreen(
-                        title: "shapes",
-                      ),
+              ],
+            ),
+            createSizedBox(),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Expanded(
+                  child: InkWell(
+                    child: const HomeScreenCard(
+                      backgroundImage: "assets/images/bg_shapes.png",
+                      backgroundColor: Color.fromARGB(63, 16, 8, 8),
                     ),
-                  )
-                },
-              ),
-              createnewSizedBox(),
-              InkWell(
-                child: const HomeScreenCard(
-                  backgroundImage: "assets/images/bg_animals.png",
-                  backgroundColor: Colors.orange,
+                    onTap: () => {
+                      Navigator.of(context).push(
+                        MaterialPageRoute(
+                          builder: (context) => const MenuScreen(
+                            title: "SHAPES",
+                          ),
+                        ),
+                      )
+                    },
+                  ),
                 ),
-                onTap: () => {
-                  Navigator.of(context).push(
-                    MaterialPageRoute(
-                      builder: (context) => const MenuScreen(
-                        title: "animals",
-                      ),
+                createnewSizedBox(),
+                Expanded(
+                  child: InkWell(
+                    child: const HomeScreenCard(
+                      backgroundImage: "assets/images/bg_animals.png",
+                      backgroundColor: Color.fromARGB(63, 16, 8, 8),
                     ),
-                  )
-                },
-              ),
-            ],
-          ),
-          createSizedBox(),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              InkWell(
-                child: const HomeScreenCard(
-                  backgroundImage: "assets/images/bg_fruits.png",
-                  backgroundColor: Colors.pink,
+                    onTap: () => {
+                      Navigator.of(context).push(
+                        MaterialPageRoute(
+                          builder: (context) => const MenuScreen(
+                            title: "ANIMALS",
+                          ),
+                        ),
+                      )
+                    },
+                  ),
                 ),
-                onTap: () => {
-                  Navigator.of(context).push(
-                    MaterialPageRoute(
-                      builder: (context) => const MenuScreen(
-                        title: "fruits",
-                      ),
+              ],
+            ),
+            createSizedBox(),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Expanded(
+                  child: InkWell(
+                    child: const HomeScreenCard(
+                      backgroundImage: "assets/images/bg_fruits.png",
+                      backgroundColor: Color.fromARGB(63, 16, 8, 8),
                     ),
-                  )
-                },
-              ),
-              createnewSizedBox(),
-              InkWell(
-                child: const HomeScreenCard(
-                  backgroundImage: "assets/images/bg_vegetables.png",
-                  backgroundColor: Colors.purple,
+                    onTap: () => {
+                      Navigator.of(context).push(
+                        MaterialPageRoute(
+                          builder: (context) => const MenuScreen(
+                            title: "FRUITS",
+                          ),
+                        ),
+                      )
+                    },
+                  ),
                 ),
-                onTap: () => {
-                  Navigator.of(context).push(
-                    MaterialPageRoute(
-                      builder: (context) => const MenuScreen(
-                        title: "vegetables",
-                      ),
+                createnewSizedBox(),
+                Expanded(
+                  child: InkWell(
+                    child: const HomeScreenCard(
+                      backgroundImage: "assets/images/bg_vegetables.png",
+                      backgroundColor: Color.fromARGB(63, 16, 8, 8),
                     ),
-                  )
-                },
-              ),
-            ],
-          ),
-        ],
-      )),
+                    onTap: () => {
+                      Navigator.of(context).push(
+                        MaterialPageRoute(
+                          builder: (context) => const MenuScreen(
+                            title: "VEGETABLES",
+                          ),
+                        ),
+                      )
+                    },
+                  ),
+                ),
+              ],
+            ),
+          ],
+        ),
+      ),
     );
   }
 
