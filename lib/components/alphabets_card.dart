@@ -4,7 +4,17 @@ import '../screens/letters_screen.dart';
 
 class AlphabetCard extends StatelessWidget {
   final String imagePath;
-  const AlphabetCard({Key? key, required this.imagePath}) : super(key: key);
+  final String upperCaseImagePath;
+  final String lowercaseImagePath;
+  final String soundPath;
+
+  const AlphabetCard(
+      {Key? key,
+      required this.upperCaseImagePath,
+      required this.soundPath,
+      required this.lowercaseImagePath,
+      required this.imagePath})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -13,8 +23,11 @@ class AlphabetCard extends StatelessWidget {
       onTap: () {
         Navigator.of(context).push(
           MaterialPageRoute(
-              builder: ((context) => const LettersScreen(
-                    title: "alphabets",
+              builder: ((context) => LettersScreen(
+                    imagePath: imagePath,
+                    soundPath: soundPath,
+                    upperCaseImagePath: upperCaseImagePath,
+                    lowercaseImagePath: lowercaseImagePath,
                   ))),
         );
       },

@@ -18,10 +18,16 @@ class AlphabetScreen extends StatelessWidget {
             children: [
               const AlphabetCard(
                 imagePath: "assets/images/bg_lettera.png",
+                lowercaseImagePath: "assets/images/bg_lettera.png",
+                upperCaseImagePath: "assets/images/bg_lettera.png",
+                soundPath: "assets/audio/orange.mp3",
               ),
               createWidthSizedBox(),
               const AlphabetCard(
                 imagePath: "assets/images/bg_letterb.png",
+                lowercaseImagePath: "assets/images/bg_lettera.png",
+                upperCaseImagePath: "assets/images/bg_lettera.png",
+                soundPath: "assets/audio/orange.mp3",
               )
             ],
           ),
