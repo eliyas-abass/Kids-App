@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:kids_app/screens/letters_screen.dart';
 
+import '../components/alphabets_card.dart';
+
 class AlphabetScreen extends StatelessWidget {
   const AlphabetScreen({Key? key}) : super(key: key);
 
@@ -11,57 +13,47 @@ class AlphabetScreen extends StatelessWidget {
         appBar: AppBar(
           title: const Text("Learn the Alphabets"),
         ),
-        body: InkWell(
-            child: Column(
-              children: [
-               Row(
+        body: Column(children: [
+          Row(
             children: [
-              Image.asset("assets/images/bg_lettera.png"),
+              const AlphabetCard(
+                imagePath: "assets/images/bg_lettera.png",
+              ),
               createWidthSizedBox(),
-              Image.asset("assets/images/bg_letterb.png"),
-              
+              const AlphabetCard(
+                imagePath: "assets/images/bg_letterb.png",
+              )
             ],
-
-            ),
+          ),
           createHeightSizedBox(),
-            Row(
+          Row(
             children: [
               Image.asset("assets/images/bg_letterc.png"),
-               createWidthSizedBox(),
+              createWidthSizedBox(),
               Image.asset("assets/images/bg_letterd.png"),
             ],
           ),
           createHeightSizedBox(),
-            Row(
+          Row(
             children: [
               Image.asset("assets/images/bg_lettere.png"),
-               createWidthSizedBox(),
+              createWidthSizedBox(),
               Image.asset("assets/images/bg_letterf.png"),
             ],
           ),
-              ]
-            ),
-            onTap: (){
-              Navigator.of(context).push(
-                MaterialPageRoute(
-                  builder: ((context) => LettersScreen(title: "alphabets",) )
-                
-                ),
-              );
-            },
-          ),
-        ),
+        ]),
+      ),
     );
   }
 }
 
-SizedBox createHeightSizedBox(){
+SizedBox createHeightSizedBox() {
   return const SizedBox(
     height: 50,
   );
-  }
+}
 
-  SizedBox createWidthSizedBox(){
+SizedBox createWidthSizedBox() {
   return const SizedBox(
     width: 50,
   );
