@@ -3,7 +3,7 @@ import '../components/alphabets_card.dart';
 import '../constant.dart';
 
 class AlphabetScreen extends StatelessWidget {
-  AlphabetScreen({Key? key}) : super(key: key);
+  const AlphabetScreen({Key? key}) : super(key: key);
 
   List<Widget> generateAlphabetCard() {
     return alphabets.asMap().entries.map(
