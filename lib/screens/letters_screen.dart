@@ -1,20 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:audioplayers/audioplayers.dart';
-import 'package:flutter/services.dart';
+
 import 'dart:typed_data';
 
-class LettersScreen extends StatefulWidget {
-  final String upperCaseImagePath;
-  final String lowercaseImagePath;
-  final String soundPath;
-  final String imagePath;
+import 'package:kids_app/constant.dart';
 
-  const LettersScreen(
-      {Key? key,
-      required this.upperCaseImagePath,
-      required this.soundPath,
-      required this.lowercaseImagePath,
-      required this.imagePath})
+class LettersScreen extends StatefulWidget {
+  final int initialIndex;
+
+  const LettersScreen({Key? key, required this.initialIndex, h})
       : super(key: key);
 
   @override
@@ -25,11 +19,15 @@ class _LettersScreenState extends State<LettersScreen> {
   bool isplaying = false;
   bool audioplayed = false;
   late Uint8List audiobytes;
+  late int currentIndex;
+  late AlphabetObject alphabet;
 
   final AudioPlayer player = AudioPlayer();
 
   @override
   void initState() {
+    currentIndex = widget.initialIndex;
+    alphabet = alphabets[currentIndex];
     Future.delayed(Duration.zero, () async {});
     super.initState();
   }
@@ -42,16 +40,32 @@ class _LettersScreenState extends State<LettersScreen> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              Image.asset(
-                widget.upperCaseImagePath,
-              ),
-              Image.asset(
-                widget.lowercaseImagePath,
-              ),
-              Image.asset(widget.imagePath),
               IconButton(
                   onPressed: () async {
-                    await player.play(DeviceFileSource(widget.soundPath));
+                    setState(() {
+                      currentIndex--;
+                      alphabet = alphabets[currentIndex];
+                    });
+                  },
+                  icon: const Icon(Icons.arrow_back)),
+              IconButton(
+                  onPressed: () async {
+                    setState(() {
+                      currentIndex++;
+                      alphabet = alphabets[currentIndex];
+                    });
+                  },
+                  icon: const Icon(Icons.arrow_forward)),
+              Image.asset(
+                alphabet.upperCaseImagePath,
+              ),
+              Image.asset(
+                alphabet.lowercaseImagePath,
+              ),
+              Image.asset(alphabet.imagePath),
+              IconButton(
+                  onPressed: () async {
+                    await player.play(DeviceFileSource(alphabet.soundPath));
                   },
                   icon: const Icon(Icons.play_arrow))
             ],

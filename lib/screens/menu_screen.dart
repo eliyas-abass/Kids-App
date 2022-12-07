@@ -3,8 +3,6 @@ import 'package:kids_app/screens/numbers_screen.dart';
 import 'package:kids_app/screens/tracing_screen.dart';
 import 'package:kids_app/screens/alphabets_screen.dart';
 
-
-
 class MenuScreen extends StatelessWidget {
   final String title;
   const MenuScreen({Key? key, required this.title}) : super(key: key);
@@ -24,21 +22,19 @@ class MenuScreen extends StatelessWidget {
                 title: Text('Learn The Alphabets'),
                 tileColor: Colors.grey,
               ),
-              
               onTap: () => {
                 Navigator.of(context).push(
                   MaterialPageRoute(
-                    builder: (context) => const AlphabetScreen(),
+                    builder: (context) => AlphabetScreen(),
                   ),
                 )
               },
             ),
-             InkWell(
+            InkWell(
               child: const ListTile(
                 title: Text('Tracing'),
                 tileColor: Colors.grey,
               ),
-              
               onTap: () => {
                 Navigator.of(context).push(
                   MaterialPageRoute(
@@ -52,7 +48,6 @@ class MenuScreen extends StatelessWidget {
                 title: Text('Learn The Numbers'),
                 tileColor: Colors.grey,
               ),
-              
               onTap: () => {
                 Navigator.of(context).push(
                   MaterialPageRoute(
@@ -61,12 +56,11 @@ class MenuScreen extends StatelessWidget {
                 )
               },
             ),
-             InkWell(
+            InkWell(
               child: const ListTile(
                 title: Text('Tracing'),
                 tileColor: Colors.grey,
               ),
-              
               onTap: () => {
                 Navigator.of(context).push(
                   MaterialPageRoute(
@@ -75,11 +69,9 @@ class MenuScreen extends StatelessWidget {
                 )
               },
             ),
-           
           ],
         ),
       ),
-      
     );
   }
 }

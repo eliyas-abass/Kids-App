@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:kids_app/components/home_screen_card.dart';
+import 'package:kids_app/screens/alphabets_screen.dart';
 import 'package:kids_app/screens/menu_screen.dart';
+import 'package:kids_app/screens/numbers_screen.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({Key? key}) : super(key: key);
@@ -29,9 +31,7 @@ class HomeScreen extends StatelessWidget {
                     onTap: () => {
                       Navigator.of(context).push(
                         MaterialPageRoute(
-                          builder: (context) => const MenuScreen(
-                            title: "ALPHABETS",
-                          ),
+                          builder: (context) => AlphabetScreen(),
                         ),
                       )
                     },
@@ -47,9 +47,7 @@ class HomeScreen extends StatelessWidget {
                     onTap: () => {
                       Navigator.of(context).push(
                         MaterialPageRoute(
-                          builder: (context) => const MenuScreen(
-                            title: "NUMBERS",
-                          ),
+                          builder: (context) => const NumbersScreen(),
                         ),
                       )
                     },
@@ -65,7 +63,7 @@ class HomeScreen extends StatelessWidget {
                   child: InkWell(
                     child: const HomeScreenCard(
                       backgroundImage: "assets/images/bg_shapes.png",
-                      backgroundColor:Color.fromARGB(80, 16, 8, 8),
+                      backgroundColor: Color.fromARGB(80, 16, 8, 8),
                     ),
                     onTap: () => {
                       Navigator.of(context).push(

@@ -7,13 +7,15 @@ class AlphabetCard extends StatelessWidget {
   final String lowercaseImagePath;
   final String imagePath;
   final String soundPath;
+  final int index;
 
   const AlphabetCard(
       {Key? key,
       required this.imagePath,
       required this.lowercaseImagePath,
       required this.upperCaseImagePath,
-      required this.soundPath})
+      required this.soundPath,
+      required this.index})
       : super(key: key);
 
   @override
@@ -23,12 +25,9 @@ class AlphabetCard extends StatelessWidget {
       onTap: () {
         Navigator.of(context).push(
           MaterialPageRoute(
-              builder: ((context) => LettersScreen(
-                    imagePath: imagePath,
-                    soundPath: soundPath,
-                    upperCaseImagePath: upperCaseImagePath,
-                    lowercaseImagePath: lowercaseImagePath,
-                  )),
+            builder: ((context) => LettersScreen(
+                  initialIndex: index,
+                )),
           ),
         );
       },
