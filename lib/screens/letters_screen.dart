@@ -37,19 +37,27 @@ class _LettersScreenState extends State<LettersScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: SafeArea(
+      body: SingleChildScrollView(
+        child: SafeArea(
           child: Column(
-        children: [
-          Image.asset(widget.upperCaseImagePath),
-          Image.asset(widget.lowercaseImagePath),
-          Image.asset(widget.imagePath),
-          IconButton(
-              onPressed: () async {
-                await player.play(DeviceFileSource(widget.soundPath));
-              },
-              icon: const Icon(Icons.play_arrow))
-        ],
-      )),
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              Image.asset(
+                widget.upperCaseImagePath,
+              ),
+              Image.asset(
+                widget.lowercaseImagePath,
+              ),
+              Image.asset(widget.imagePath),
+              IconButton(
+                  onPressed: () async {
+                    await player.play(DeviceFileSource(widget.soundPath));
+                  },
+                  icon: const Icon(Icons.play_arrow))
+            ],
+          ),
+        ),
+      ),
     );
   }
 }

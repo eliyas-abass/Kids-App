@@ -24,7 +24,7 @@ class HomeScreen extends StatelessWidget {
                   child: InkWell(
                     child: const HomeScreenCard(
                       backgroundImage: "assets/images/bg_alphabets.png",
-                      backgroundColor: Color.fromARGB(63, 16, 8, 8),
+                      backgroundColor: Color.fromARGB(80, 16, 8, 8),
                     ),
                     onTap: () => {
                       Navigator.of(context).push(
@@ -42,7 +42,7 @@ class HomeScreen extends StatelessWidget {
                   child: InkWell(
                     child: const HomeScreenCard(
                       backgroundImage: "assets/images/bg_numbers.png",
-                      backgroundColor: Color.fromARGB(63, 16, 8, 8),
+                      backgroundColor: Color.fromARGB(80, 16, 8, 8),
                     ),
                     onTap: () => {
                       Navigator.of(context).push(
@@ -65,7 +65,7 @@ class HomeScreen extends StatelessWidget {
                   child: InkWell(
                     child: const HomeScreenCard(
                       backgroundImage: "assets/images/bg_shapes.png",
-                      backgroundColor: Color.fromARGB(63, 16, 8, 8),
+                      backgroundColor:Color.fromARGB(80, 16, 8, 8),
                     ),
                     onTap: () => {
                       Navigator.of(context).push(
@@ -83,7 +83,7 @@ class HomeScreen extends StatelessWidget {
                   child: InkWell(
                     child: const HomeScreenCard(
                       backgroundImage: "assets/images/bg_animals.png",
-                      backgroundColor: Color.fromARGB(63, 16, 8, 8),
+                      backgroundColor: Color.fromARGB(80, 16, 8, 8),
                     ),
                     onTap: () => {
                       Navigator.of(context).push(
@@ -106,7 +106,7 @@ class HomeScreen extends StatelessWidget {
                   child: InkWell(
                     child: const HomeScreenCard(
                       backgroundImage: "assets/images/bg_fruits.png",
-                      backgroundColor: Color.fromARGB(63, 16, 8, 8),
+                      backgroundColor: Color.fromARGB(80, 16, 8, 8),
                     ),
                     onTap: () => {
                       Navigator.of(context).push(
@@ -124,7 +124,7 @@ class HomeScreen extends StatelessWidget {
                   child: InkWell(
                     child: const HomeScreenCard(
                       backgroundImage: "assets/images/bg_vegetables.png",
-                      backgroundColor: Color.fromARGB(63, 16, 8, 8),
+                      backgroundColor: Color.fromARGB(80, 16, 8, 8),
                     ),
                     onTap: () => {
                       Navigator.of(context).push(

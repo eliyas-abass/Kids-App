@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:kids_app/screens/numbers_screen.dart';
 import 'package:kids_app/screens/tracing_screen.dart';
 import 'package:kids_app/screens/alphabets_screen.dart';
+
+
 
 class MenuScreen extends StatelessWidget {
   final String title;
@@ -44,6 +47,35 @@ class MenuScreen extends StatelessWidget {
                 )
               },
             ),
+            InkWell(
+              child: const ListTile(
+                title: Text('Learn The Numbers'),
+                tileColor: Colors.grey,
+              ),
+              
+              onTap: () => {
+                Navigator.of(context).push(
+                  MaterialPageRoute(
+                    builder: (context) => const NumbersScreen(),
+                  ),
+                )
+              },
+            ),
+             InkWell(
+              child: const ListTile(
+                title: Text('Tracing'),
+                tileColor: Colors.grey,
+              ),
+              
+              onTap: () => {
+                Navigator.of(context).push(
+                  MaterialPageRoute(
+                    builder: (context) => const TracingScreen(),
+                  ),
+                )
+              },
+            ),
+           
           ],
         ),
       ),

@@ -3,23 +3,23 @@ import 'package:flutter/material.dart';
 import '../screens/letters_screen.dart';
 
 class AlphabetCard extends StatelessWidget {
-  final String imagePath;
   final String upperCaseImagePath;
   final String lowercaseImagePath;
+  final String imagePath;
   final String soundPath;
 
   const AlphabetCard(
       {Key? key,
-      required this.upperCaseImagePath,
-      required this.soundPath,
+      required this.imagePath,
       required this.lowercaseImagePath,
-      required this.imagePath})
+      required this.upperCaseImagePath,
+      required this.soundPath})
       : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      child: Image.asset(imagePath),
+      child: Image.asset(upperCaseImagePath),
       onTap: () {
         Navigator.of(context).push(
           MaterialPageRoute(
@@ -28,7 +28,8 @@ class AlphabetCard extends StatelessWidget {
                     soundPath: soundPath,
                     upperCaseImagePath: upperCaseImagePath,
                     lowercaseImagePath: lowercaseImagePath,
-                  ))),
+                  )),
+          ),
         );
       },
     );
