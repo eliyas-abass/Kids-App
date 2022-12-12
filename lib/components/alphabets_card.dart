@@ -7,6 +7,7 @@ class AlphabetCard extends StatelessWidget {
   final String lowercaseImagePath;
   final String imagePath;
   final String soundPath;
+  final String Text;
   final int index;
 
   const AlphabetCard(
@@ -15,13 +16,18 @@ class AlphabetCard extends StatelessWidget {
       required this.lowercaseImagePath,
       required this.upperCaseImagePath,
       required this.soundPath,
-      required this.index})
+      required this.index,
+      required this.Text})
       : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      child: Image.asset(upperCaseImagePath),
+      child: Container(
+        width: 50,
+        height: 20,
+        child: Image.asset(upperCaseImagePath),
+      ),
       onTap: () {
         Navigator.of(context).push(
           MaterialPageRoute(

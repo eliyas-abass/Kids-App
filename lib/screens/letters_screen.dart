@@ -39,39 +39,68 @@ class _LettersScreenState extends State<LettersScreen> {
         child: SafeArea(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.center,
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            mainAxisSize: MainAxisSize.max,
             children: [
-              IconButton(
-                  onPressed: () async {
-                    setState(() {
-                      currentIndex--;
-                      alphabet = alphabets[currentIndex];
-                    });
-                  },
-                  icon: const Icon(Icons.arrow_back)),
-              IconButton(
-                  onPressed: () async {
-                    setState(() {
-                      currentIndex++;
-                      alphabet = alphabets[currentIndex];
-                    });
-                  },
-                  icon: const Icon(Icons.arrow_forward)),
-              Image.asset(
-                alphabet.upperCaseImagePath,
-              ),
-              Image.asset(
-                alphabet.lowercaseImagePath,
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Image.asset(
+                    alphabet.upperCaseImagePath,
+                  ),
+                  Image.asset(
+                    alphabet.lowercaseImagePath,
+                  ),
+                ],
               ),
               Image.asset(alphabet.imagePath),
-              IconButton(
-                  onPressed: () async {
-                    await player.play(DeviceFileSource(alphabet.soundPath));
-                  },
-                  icon: const Icon(Icons.play_arrow))
+              Text(alphabet.text),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  createPreviousButton(),
+                  IconButton(
+                    onPressed: () async {
+                      await player.play(DeviceFileSource(alphabet.soundPath));
+                    },
+                    icon: const Icon(Icons.play_arrow),
+                  ),
+                  createNextButton()
+                ],
+              ),
             ],
           ),
         ),
       ),
     );
+  }
+
+  createNextButton() {
+    if (currentIndex < alphabets.length - 1) {
+      return IconButton(
+          onPressed: () async {
+            setState(() {
+              currentIndex++;
+              alphabet = alphabets[currentIndex];
+            });
+          },
+          icon: const Icon(Icons.arrow_forward));
+    }
+    return const SizedBox.shrink();
+  }
+
+  createPreviousButton() {
+    if (currentIndex != 0) {
+      return IconButton(
+        onPressed: () async {
+          setState(() {
+            currentIndex--;
+            alphabet = alphabets[currentIndex];
+          });
+        },
+        icon: const Icon(Icons.arrow_back),
+      );
+    }
+    return const SizedBox.shrink();
   }
 }

@@ -14,6 +14,7 @@ class AlphabetScreen extends StatelessWidget {
           lowercaseImagePath: alphabet.lowercaseImagePath,
           imagePath: alphabet.imagePath,
           soundPath: alphabet.soundPath,
+          Text: alphabet.text,
           index: entry.key,
         );
       },
@@ -30,8 +31,8 @@ class AlphabetScreen extends StatelessWidget {
         child: Column(
           children: [
             Wrap(
-              runSpacing: 20,
-              spacing: 50,
+              runSpacing: 70,
+              spacing: 110,
               children: [...generateAlphabetCard()],
             ),
           ],

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:kids_app/constant.dart';
 import '../components/numbers_card.dart';
 
 class NumbersScreen extends StatelessWidget {
@@ -11,49 +12,27 @@ class NumbersScreen extends StatelessWidget {
           title: const Text("Learn the numbers"),
         ),
         body: SingleChildScrollView(
-          child: Column(
-            children: [
-              Row(
-                children: [
-                  const NumbersCard(
-                    upperCaseImagePath: "assets/images/bg_zeroimage.png",
-                    soundPath: "assets/audio/ant.mp3",
-                  ),
-                  createWidthSizedBox(),
-                  const NumbersCard(
-                    upperCaseImagePath: "assets/images/bg_oneimage.png",
-                    soundPath: "assets/audio/ball.mp3",
-                  ),
-                ],
-              ),
-              createHeightSizedBox(),
-              Row(
-                children: [
-                  const NumbersCard(
-                    upperCaseImagePath: "assets/images/bg_twoimage.png",
-                    soundPath: "assets/audio/cup.mp3",
-                  ),
-                  createWidthSizedBox(),
-                  const NumbersCard(
-                    upperCaseImagePath: "assets/images/bg_threeimage.png",
-                    soundPath: "assets/audio/donkey.mp3",
-                  ),
-                ],
-              ),
-            ],
+          child: Wrap(
+            runSpacing: 20,
+            spacing: 50,
+            alignment: WrapAlignment.center,
+            children: generateNumbersCard(),
           ),
         ));
   }
-}
 
-SizedBox createHeightSizedBox() {
-  return const SizedBox(
-    height: 50,
-  );
-}
+  generateNumbersCard() {
+    List<NumberCard> numberCards = [];
 
-SizedBox createWidthSizedBox() {
-  return const SizedBox(
-    width: 50,
-  );
+    for (int i = 0; i < numbers.length; i++) {
+      numberCards.add(NumberCard(
+        imagePath: numbers[i].imagePath,
+        soundPath: numbers[i].soundPath,
+        index: i,
+        text: numbers[i].text,
+      ));
+    }
+
+    return numberCards;
+  }
 }
