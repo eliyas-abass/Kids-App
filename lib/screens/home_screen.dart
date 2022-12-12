@@ -4,6 +4,8 @@ import 'package:kids_app/screens/alphabets_screen.dart';
 import 'package:kids_app/screens/menu_screen.dart';
 import 'package:kids_app/screens/numbers_screen.dart';
 
+import 'shapes_screen.dart';
+
 class HomeScreen extends StatelessWidget {
   const HomeScreen({Key? key}) : super(key: key);
 
@@ -68,7 +70,7 @@ class HomeScreen extends StatelessWidget {
                     onTap: () => {
                       Navigator.of(context).push(
                         MaterialPageRoute(
-                          builder: (context) => const MenuScreen(
+                          builder: (context) => const ShapesScreen(
                             title: "SHAPES",
                           ),
                         ),
