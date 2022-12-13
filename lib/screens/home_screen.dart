@@ -1,10 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:kids_app/components/home_screen_card.dart';
 import 'package:kids_app/screens/alphabets_screen.dart';
-import 'package:kids_app/screens/menu_screen.dart';
 import 'package:kids_app/screens/numbers_screen.dart';
-
-import 'shapes_screen.dart';
+import 'package:kids_app/screens/shapes_screen.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({Key? key}) : super(key: key);
@@ -28,7 +26,8 @@ class HomeScreen extends StatelessWidget {
                   child: InkWell(
                     child: const HomeScreenCard(
                       backgroundImage: "assets/images/bg_alphabets.png",
-                      backgroundColor: Color.fromARGB(80, 16, 8, 8),
+                      backgroundColor: Color(0X99ECF036),
+                      title: "alphabets",
                     ),
                     onTap: () => {
                       Navigator.of(context).push(
@@ -44,7 +43,8 @@ class HomeScreen extends StatelessWidget {
                   child: InkWell(
                     child: const HomeScreenCard(
                       backgroundImage: "assets/images/bg_numbers.png",
-                      backgroundColor: Color.fromARGB(80, 16, 8, 8),
+                      backgroundColor: Color(0X990B0101),
+                      title: "numbers",
                     ),
                     onTap: () => {
                       Navigator.of(context).push(
@@ -65,36 +65,23 @@ class HomeScreen extends StatelessWidget {
                   child: InkWell(
                     child: const HomeScreenCard(
                       backgroundImage: "assets/images/bg_shapes.png",
-                      backgroundColor: Color.fromARGB(80, 16, 8, 8),
+                      backgroundColor: Color(0X997238EE),
+                      title: "shapes",
                     ),
                     onTap: () => {
                       Navigator.of(context).push(
                         MaterialPageRoute(
-                          builder: (context) => const ShapesScreen(
-                            title: "SHAPES",
-                          ),
+                          builder: (context) => const ShapesScreen(),
                         ),
                       )
                     },
                   ),
                 ),
                 createnewSizedBox(),
-                Expanded(
-                  child: InkWell(
-                    child: const HomeScreenCard(
-                      backgroundImage: "assets/images/bg_animals.png",
-                      backgroundColor: Color.fromARGB(80, 16, 8, 8),
-                    ),
-                    onTap: () => {
-                      Navigator.of(context).push(
-                        MaterialPageRoute(
-                          builder: (context) => const MenuScreen(
-                            title: "ANIMALS",
-                          ),
-                        ),
-                      )
-                    },
-                  ),
+                createProCard(
+                  "Animal",
+                  const Color(0X995ED634),
+                  "assets/images/bg_animals.png",
                 ),
               ],
             ),
@@ -102,40 +89,16 @@ class HomeScreen extends StatelessWidget {
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Expanded(
-                  child: InkWell(
-                    child: const HomeScreenCard(
-                      backgroundImage: "assets/images/bg_fruits.png",
-                      backgroundColor: Color.fromARGB(80, 16, 8, 8),
-                    ),
-                    onTap: () => {
-                      Navigator.of(context).push(
-                        MaterialPageRoute(
-                          builder: (context) => const MenuScreen(
-                            title: "FRUITS",
-                          ),
-                        ),
-                      )
-                    },
-                  ),
+                createProCard(
+                  "Fruit",
+                  const Color(0X990C15F2),
+                  "assets/images/bg_fruits.png",
                 ),
                 createnewSizedBox(),
-                Expanded(
-                  child: InkWell(
-                    child: const HomeScreenCard(
-                      backgroundImage: "assets/images/bg_vegetables.png",
-                      backgroundColor: Color.fromARGB(80, 16, 8, 8),
-                    ),
-                    onTap: () => {
-                      Navigator.of(context).push(
-                        MaterialPageRoute(
-                          builder: (context) => const MenuScreen(
-                            title: "VEGETABLES",
-                          ),
-                        ),
-                      )
-                    },
-                  ),
+                createProCard(
+                  "Vegetables",
+                  const Color(0X990C15F2),
+                  "assets/images/bg_vegetables.png",
                 ),
               ],
             ),
@@ -145,15 +108,50 @@ class HomeScreen extends StatelessWidget {
     );
   }
 
+  Expanded createProCard(String title, Color color, String imagePath) {
+    return Expanded(
+      child: Container(
+        alignment: AlignmentDirectional.center,
+        color: color,
+        child: Stack(
+          fit: StackFit.loose,
+          clipBehavior: Clip.none,
+          children: [
+            HomeScreenCard(
+              backgroundImage: imagePath,
+              backgroundColor: Colors.transparent,
+              title: title,
+            ),
+            Positioned(
+              top: 5,
+              right: -20,
+              child: Container(
+                color: Colors.red,
+                padding: const EdgeInsets.all(5),
+                child: const Text(
+                  "PRO",
+                  style: TextStyle(
+                      fontSize: 15,
+                      fontWeight: FontWeight.bold,
+                      color: Colors.white),
+                ),
+              ),
+            )
+          ],
+        ),
+      ),
+    );
+  }
+
   SizedBox createSizedBox() {
     return const SizedBox(
-      height: 4,
+      height: 5,
     );
   }
 
   SizedBox createnewSizedBox() {
     return const SizedBox(
-      width: 10,
+      width: 5,
     );
   }
 }

@@ -24,6 +24,19 @@ class NumberObject {
   });
 }
 
+class ShapeObject {
+  final String imagePath;
+  final String soundPath;
+  final String text;
+  ShapeObject({
+    required this.imagePath,
+    required this.soundPath,
+    required this.text,
+  });
+
+  get length => null;
+}
+
 List<AlphabetObject> alphabets = [
   AlphabetObject(
     upperCaseImagePath: "assets/images/AA.png",
@@ -33,175 +46,175 @@ List<AlphabetObject> alphabets = [
     text: "ANT",
   ),
   AlphabetObject(
-    upperCaseImagePath: "assets/images/b.png",
+    upperCaseImagePath: "assets/images/BB.png",
     lowercaseImagePath: "assets/images/b.png",
     imagePath: "assets/images/bg_Ballimage.png",
     soundPath: "assets/audio/ball.mp3",
     text: "BALL",
   ),
   AlphabetObject(
-    upperCaseImagePath: "assets/images/c.png",
+    upperCaseImagePath: "assets/images/CC.png",
     lowercaseImagePath: "assets/images/c.png",
     imagePath: "assets/images/bg_Cupimage.png",
     soundPath: "assets/audio/cup.mp3",
     text: "CUP",
   ),
   AlphabetObject(
-    upperCaseImagePath: "assets/images/d.png",
+    upperCaseImagePath: "assets/images/DD.png",
     lowercaseImagePath: "assets/images/d.png",
     imagePath: "assets/images/bg_donkeyimage.png",
     soundPath: "assets/audio/donkey.mp3",
     text: "DONKEY",
   ),
   AlphabetObject(
-    upperCaseImagePath: "assets/images/e.png",
+    upperCaseImagePath: "assets/images/EE.png",
     lowercaseImagePath: "assets/images/e.png",
     imagePath: "assets/images/bg_eggimage.png",
     soundPath: "assets/audio/egg.mp3",
     text: "EGG",
   ),
   AlphabetObject(
-    upperCaseImagePath: "assets/images/f.png",
+    upperCaseImagePath: "assets/images/FF.png",
     lowercaseImagePath: "assets/images/f.png",
     imagePath: "assets/images/bg_fishimage.png",
     soundPath: "assets/audio/fish.mp3",
     text: "FISH",
   ),
   AlphabetObject(
-    upperCaseImagePath: "assets/images/g.png",
+    upperCaseImagePath: "assets/images/GG.png",
     lowercaseImagePath: "assets/images/g.png",
     imagePath: "assets/images/bg_grapesimage.png",
     soundPath: "assets/audio/grapes.mp3",
     text: "GRAPES",
   ),
   AlphabetObject(
-    upperCaseImagePath: "assets/images/h.png",
+    upperCaseImagePath: "assets/images/HH.png",
     lowercaseImagePath: "assets/images/h.png",
     imagePath: "assets/images/bg_houseimage.png",
     soundPath: "assets/audio/house.mp3",
     text: "HOUSE",
   ),
   AlphabetObject(
-    upperCaseImagePath: "assets/images/i.png",
+    upperCaseImagePath: "assets/images/II.png",
     lowercaseImagePath: "assets/images/i.png",
     imagePath: "assets/images/bg_ironimage.png",
     soundPath: "assets/audio/iron.mp3",
     text: "IRON",
   ),
   AlphabetObject(
-    upperCaseImagePath: "assets/images/j.png",
+    upperCaseImagePath: "assets/images/JJ.png",
     lowercaseImagePath: "assets/images/j.png",
     imagePath: "assets/images/bg_jarimage.png",
     soundPath: "assets/audio/jar.mp3",
     text: "JAR",
   ),
   AlphabetObject(
-    upperCaseImagePath: "assets/images/k.png",
+    upperCaseImagePath: "assets/images/KK.png",
     lowercaseImagePath: "assets/images/k.png",
     imagePath: "assets/images/bg_keyimage.png",
     soundPath: "assets/audio/key.mp3",
     text: "KEY",
   ),
   AlphabetObject(
-    upperCaseImagePath: "assets/images/l.png",
+    upperCaseImagePath: "assets/images/LL.png",
     lowercaseImagePath: "assets/images/l.png",
     imagePath: "assets/images/bg_lampimage.png",
     soundPath: "assets/audio/lamp.mp3",
     text: "LAMP",
   ),
   AlphabetObject(
-    upperCaseImagePath: "assets/images/m.png",
+    upperCaseImagePath: "assets/images/MM.png",
     lowercaseImagePath: "assets/images/m.png",
     imagePath: "assets/images/bg_moonimage.png",
     soundPath: "assets/audio/moon.mp3",
     text: "MOON",
   ),
   AlphabetObject(
-    upperCaseImagePath: "assets/images/n.png",
+    upperCaseImagePath: "assets/images/NN.png",
     lowercaseImagePath: "assets/images/n.png",
     imagePath: "assets/images/bg_nailimage.png",
     soundPath: "assets/audio/nail.mp3",
     text: "NAIL",
   ),
   AlphabetObject(
-    upperCaseImagePath: "assets/images/o.png",
+    upperCaseImagePath: "assets/images/OO.png",
     lowercaseImagePath: "assets/images/o.png",
     imagePath: "assets/images/bg_onionimage.png",
     soundPath: "assets/audio/onion.mp3",
     text: "ONION",
   ),
   AlphabetObject(
-    upperCaseImagePath: "assets/images/p.png",
+    upperCaseImagePath: "assets/images/PP.png",
     lowercaseImagePath: "assets/images/p.png",
     imagePath: "assets/images/bg_pencilimage.png",
     soundPath: "assets/audio/pencil.mp3",
     text: "PENCIL",
   ),
   AlphabetObject(
-    upperCaseImagePath: "assets/images/q.png",
+    upperCaseImagePath: "assets/images/QQ.png",
     lowercaseImagePath: "assets/images/q.png",
     imagePath: "assets/images/bg_queenimage.png",
     soundPath: "assets/audio/queen.mp3",
     text: "QUEEN",
   ),
   AlphabetObject(
-    upperCaseImagePath: "assets/images/r.png",
+    upperCaseImagePath: "assets/images/RR.png",
     lowercaseImagePath: "assets/images/r.png",
     imagePath: "assets/images/bg_rainbowimage.png",
     soundPath: "assets/audio/rainbow.mp3",
     text: "RAINBOW",
   ),
   AlphabetObject(
-    upperCaseImagePath: "assets/images/s.png",
+    upperCaseImagePath: "assets/images/SS.png",
     lowercaseImagePath: "assets/images/s.png",
     imagePath: "assets/images/bg_sunimage.png",
     soundPath: "assets/audio/sun.mp3",
     text: "SUN",
   ),
   AlphabetObject(
-    upperCaseImagePath: "assets/images/t.png",
+    upperCaseImagePath: "assets/images/TT.png",
     lowercaseImagePath: "assets/images/t.png",
     imagePath: "assets/images/bg_trainimage.png",
     soundPath: "assets/audio/train.mp3",
     text: "TRAIN",
   ),
   AlphabetObject(
-    upperCaseImagePath: "assets/images/u.png",
+    upperCaseImagePath: "assets/images/UU.png",
     lowercaseImagePath: "assets/images/u.png",
     imagePath: "assets/images/bg_umbrellaimage.png",
     soundPath: "assets/audio/umbrella.mp3",
     text: "UMBRELLA",
   ),
   AlphabetObject(
-    upperCaseImagePath: "assets/images/v.png",
+    upperCaseImagePath: "assets/images/VV.png",
     lowercaseImagePath: "assets/images/v.png",
     imagePath: "assets/images/bg_vultureimage.png",
     soundPath: "assets/audio/vulture.mp3",
     text: "VUTURE",
   ),
   AlphabetObject(
-    upperCaseImagePath: "assets/images/w.png",
+    upperCaseImagePath: "assets/images/WW.png",
     lowercaseImagePath: "assets/images/w.png",
     imagePath: "assets/images/bg_watchimage.png",
     soundPath: "assets/audio/watch.mp3",
     text: "WATCH",
   ),
   AlphabetObject(
-    upperCaseImagePath: "assets/images/x.png",
+    upperCaseImagePath: "assets/images/XX.png",
     lowercaseImagePath: "assets/images/x.png",
     imagePath: "assets/images/bg_xylophoneimage.png",
     soundPath: "assets/audio/xylophone.mp3",
     text: "XYLOPHONE",
   ),
   AlphabetObject(
-    upperCaseImagePath: "assets/images/y.png",
+    upperCaseImagePath: "assets/images/YY.png",
     lowercaseImagePath: "assets/images/y.png",
     imagePath: "assets/images/bg_yamimage.png",
     soundPath: "assets/audio/yam.mp3",
     text: "YAM",
   ),
   AlphabetObject(
-    upperCaseImagePath: "assets/images/z.png",
+    upperCaseImagePath: "assets/images/ZZ.png",
     lowercaseImagePath: "assets/images/z.png",
     imagePath: "assets/images/bg_zipimage.png",
     soundPath: "assets/audio/zip.mp3",
@@ -314,5 +327,58 @@ List<NumberObject> numbers = [
     imagePath: "assets/images/numbers/20.png",
     soundPath: "assets/audio/twenty.mp3",
     text: "TWENTY",
+  ),
+];
+
+List<ShapeObject> shapes = [
+  ShapeObject(
+    imagePath: "assets/images/shapes/circle.png",
+    soundPath: "assets/audio/circle.mp3",
+    text: "ZERO",
+  ),
+  ShapeObject(
+    imagePath: "assets/images/shapes/triangle.png",
+    soundPath: "assets/audio/triangle.mp3",
+    text: "ONE",
+  ),
+  ShapeObject(
+    imagePath: "assets/images/shapes/square.png",
+    soundPath: "assets/audio/square.mp3",
+    text: "TWO",
+  ),
+  ShapeObject(
+    imagePath: "assets/images/shapes/oval.png",
+    soundPath: "assets/audio/oval.mp3",
+    text: "THREE",
+  ),
+  ShapeObject(
+    imagePath: "assets/images/shapes/rectangle.png",
+    soundPath: "assets/audio/rectangle.mp3",
+    text: "FOUR",
+  ),
+  ShapeObject(
+    imagePath: "assets/images/shapes/parallelogram.png",
+    soundPath: "assets/audio/parallelogram.mp3",
+    text: "FIVE",
+  ),
+  ShapeObject(
+    imagePath: "assets/images/shapes/octagon.png",
+    soundPath: "assets/audio/octagon.mp3",
+    text: "FIVE",
+  ),
+  ShapeObject(
+    imagePath: "assets/images/shapes/star.png",
+    soundPath: "assets/audio/star.mp3",
+    text: "FIVE",
+  ),
+  ShapeObject(
+    imagePath: "assets/images/shapes/pentagon.png",
+    soundPath: "assets/audio/pentagon.mp3",
+    text: "FIVE",
+  ),
+  ShapeObject(
+    imagePath: "assets/images/shapes/diamond.png",
+    soundPath: "assets/audio/diamond.mp3",
+    text: "FIVE",
   ),
 ];

@@ -7,25 +7,23 @@ class AlphabetCard extends StatelessWidget {
   final String lowercaseImagePath;
   final String imagePath;
   final String soundPath;
-  final String Text;
   final int index;
 
-  const AlphabetCard(
-      {Key? key,
-      required this.imagePath,
-      required this.lowercaseImagePath,
-      required this.upperCaseImagePath,
-      required this.soundPath,
-      required this.index,
-      required this.Text})
-      : super(key: key);
+  const AlphabetCard({
+    Key? key,
+    required this.imagePath,
+    required this.lowercaseImagePath,
+    required this.upperCaseImagePath,
+    required this.soundPath,
+    required this.index,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return InkWell(
       child: Container(
-        width: 50,
-        height: 20,
+        width: 150,
+        height: 150,
         child: Image.asset(upperCaseImagePath),
       ),
       onTap: () {

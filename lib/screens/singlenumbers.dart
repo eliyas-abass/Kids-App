@@ -41,37 +41,36 @@ class _SinglenumbersScreenState extends State<SinglenumbersScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: SingleChildScrollView(
-        child: SafeArea(
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.center,
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            mainAxisSize: MainAxisSize.max,
-            children: [
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Image.asset(
-                    number.imagePath,
-                  ),
-                ],
-              ),
-              Text(number.text),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  createPreviousButton(),
-                  IconButton(
-                    onPressed: () async {
-                      await player.play(DeviceFileSource(number.soundPath));
-                    },
-                    icon: const Icon(Icons.play_arrow),
-                  ),
-                  createNextButton()
-                ],
-              ),
-            ],
-          ),
+      body: SafeArea(
+        child: Column(
+          children: [
+            const Spacer(),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Image.asset(
+                  number.imagePath,
+                ),
+              ],
+            ),
+            const Spacer(),
+            Text(number.text),
+            const Spacer(),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                createPreviousButton(),
+                IconButton(
+                  onPressed: () async {
+                    await player.play(DeviceFileSource(number.soundPath));
+                  },
+                  icon: const Icon(Icons.play_arrow),
+                ),
+                createNextButton()
+              ],
+            ),
+            const Spacer(),
+          ],
         ),
       ),
     );

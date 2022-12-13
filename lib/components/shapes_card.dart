@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
-import '../screens/singlenumbers.dart';
+import 'package:kids_app/screens/shapes_detail.dart';
 
-class NumberCard extends StatelessWidget {
+class ShapesCard extends StatelessWidget {
   final String imagePath;
   final String soundPath;
   final String text;
   final int index;
 
-  const NumberCard(
+  const ShapesCard(
       {Key? key,
       required this.imagePath,
       required this.soundPath,
@@ -26,13 +26,7 @@ class NumberCard extends StatelessWidget {
       onTap: () {
         Navigator.of(context).push(
           MaterialPageRoute(
-            builder: ((context) => SinglenumbersScreen(
-                  initialIndex: index,
-                  text: 'numbers',
-                  currentIndex: index,
-                  imagePath: 'imagepath',
-                  soundPath: 'soundpath',
-                )),
+            builder: ((context) => ShapesDetails(initialIndex: index)),
           ),
         );
       },

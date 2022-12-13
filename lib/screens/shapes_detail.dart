@@ -5,29 +5,31 @@ import 'dart:typed_data';
 
 import 'package:kids_app/constant.dart';
 
-class LettersScreen extends StatefulWidget {
+class ShapesDetails extends StatefulWidget {
   final int initialIndex;
 
-  const LettersScreen({Key? key, required this.initialIndex, h})
-      : super(key: key);
+  const ShapesDetails({
+    Key? key,
+    required this.initialIndex,
+  }) : super(key: key);
 
   @override
-  State<LettersScreen> createState() => _LettersScreenState();
+  State<ShapesDetails> createState() => _ShapesDetailsState();
 }
 
-class _LettersScreenState extends State<LettersScreen> {
+class _ShapesDetailsState extends State<ShapesDetails> {
   bool isplaying = false;
   bool audioplayed = false;
   late Uint8List audiobytes;
   late int currentIndex;
-  late AlphabetObject alphabet;
+  late ShapeObject shape;
 
   final AudioPlayer player = AudioPlayer();
 
   @override
   void initState() {
     currentIndex = widget.initialIndex;
-    alphabet = alphabets[currentIndex];
+    shape = shapes[currentIndex];
     Future.delayed(Duration.zero, () async {});
     super.initState();
   }
@@ -42,28 +44,11 @@ class _LettersScreenState extends State<LettersScreen> {
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                SizedBox(
-                  width: 150,
-                  height: 150,
-                  child: Image.asset(
-                    alphabet.upperCaseImagePath,
-                  ),
-                ),
-                SizedBox(
-                  width: 75,
-                  height: 75,
-                  child: Image.asset(
-                    alphabet.lowercaseImagePath,
-                  ),
-                ),
+                Image.asset(shape.imagePath),
               ],
             ),
             const Spacer(),
-            Image.asset(alphabet.imagePath),
-            Text(
-              alphabet.text,
-              textAlign: TextAlign.center,
-            ),
+            Text(shape.text),
             const Spacer(),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -71,7 +56,7 @@ class _LettersScreenState extends State<LettersScreen> {
                 createPreviousButton(),
                 IconButton(
                   onPressed: () async {
-                    await player.play(DeviceFileSource(alphabet.soundPath));
+                    await player.play(DeviceFileSource(shape.soundPath));
                   },
                   icon: const Icon(Icons.play_arrow),
                 ),
@@ -86,12 +71,12 @@ class _LettersScreenState extends State<LettersScreen> {
   }
 
   createNextButton() {
-    if (currentIndex < alphabets.length - 1) {
+    if (currentIndex < shapes.length - 1) {
       return IconButton(
           onPressed: () async {
             setState(() {
               currentIndex++;
-              alphabet = alphabets[currentIndex];
+              shape = shapes[currentIndex];
             });
           },
           icon: const Icon(Icons.arrow_forward));
@@ -105,7 +90,7 @@ class _LettersScreenState extends State<LettersScreen> {
         onPressed: () async {
           setState(() {
             currentIndex--;
-            alphabet = alphabets[currentIndex];
+            shape = shapes[currentIndex];
           });
         },
         icon: const Icon(Icons.arrow_back),
