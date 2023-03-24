@@ -71,7 +71,7 @@ class _LettersScreenState extends State<LettersScreen> {
                 createPreviousButton(),
                 IconButton(
                   onPressed: () async {
-                    await player.play(DeviceFileSource(alphabet.soundPath));
+                    await player.play(AssetSource(alphabet.soundPath));
                   },
                   icon: const Icon(Icons.play_arrow),
                 ),
